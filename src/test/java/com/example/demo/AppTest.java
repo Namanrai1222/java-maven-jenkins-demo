@@ -20,4 +20,9 @@ class AppTest {
     void rejectsBlankName() {
         assertThrows(IllegalArgumentException.class, () -> App.greeting("  "));
     }
+
+    @Test
+    void rejectsNullName() {
+        assertThrows(IllegalArgumentException.class, () -> App.greeting(null));
+    }
 }
