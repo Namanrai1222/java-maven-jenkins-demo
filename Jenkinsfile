@@ -21,6 +21,11 @@ pipeline {
                 sh 'mvn -B -ntp clean verify'
             }
         }
+        stage('Test HTML form') {
+            steps {
+                sh 'python3 -m unittest discover -s tests -v'
+            }
+        }
     }
 
     post {
